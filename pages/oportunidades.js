@@ -10,11 +10,11 @@ export default function OportunitiesPage() {
     return (
         <React.Fragment>
             <Header/>
-            <div class="page-banner-area" id="page-banner">
+            <div class="filter__content">
                 <Container>
                     <div class="row justify-content-center">
                         <div class="col-lg-12 m-auto col-sm-12 col-md-12">
-                            <div class="banner-content content-padding">
+                            <div class="filters">
                                 <span>Tipo</span>
                                 <Link href="/">
                                     <a>
@@ -45,7 +45,7 @@ export default function OportunitiesPage() {
                 <Container>
                     <Row>
                         <Col>
-                            <p>Encontramos <strong>833</strong> vagas para você</p>
+                            <p className="mt-3">Encontramos <strong>833</strong> vagas para você</p>
                         </Col>
                     </Row>
 

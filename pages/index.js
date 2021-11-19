@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Footer from '../components/Footer';
-import Header from '../components/Header';
+import HeaderHome from '../components/HeaderHome';
 import Oportunities from '../components/Oportunities';
 
 export default function Home() {
   return (
     <React.Fragment>
-      <Header/>
+      <HeaderHome/>
       <div class="banner-area banner-2">
         <div class="d-table">
             <div class="d-table-cell">

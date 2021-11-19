@@ -2,10 +2,17 @@ import React, { useEffect, useState } from "react";
 import Link from 'next/link';
 
 export default function Header(){
+    const [scroll, setScroll] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY > 20);
+        });
+    }, []);
 
     return (
         <React.Fragment>
-            <nav class="navbar navbar-expand-lg fixed-top trans-navigation header-white">
+            <nav class={scroll ? "navbar navbar-expand-lg fixed-top trans-navigation header-white" : "navbar navbar-expand-lg fixed-top trans-navigation"}>
                 <div class="container">
                     <li>
                         <Link href="/">

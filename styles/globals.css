@@ -1377,6 +1377,20 @@ BLOG SINGLE
   margin-right: 16px;
 }
 
+.filter__content {
+  position: sticky;
+  top: 68px;
+  background: #eeeeee;
+  width: 100%;
+  float: left;
+  margin-bottom: 70px;
+  z-index: 999;
+}
+
+.filters {
+  padding: 20px 0;
+}
+
 /*-------------------------------
  RESPONSIVE LAYOUT
 ---------------------------------*/
@@ -1685,4 +1699,3 @@ BLOG SINGLE
   }
 }
 
-/*# sourceMappingURL=maps/style.css.map */
