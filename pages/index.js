@@ -1,32 +1,49 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Image from 'next/image'
 
 import Footer from '../components/Footer';
-import HeaderHome from '../components/HeaderHome';
+import Header from '../components/Header';
 import Oportunities from '../components/Oportunities';
 
+import { AuthContext } from '../contexts/AuthContext.tsx';
+import imgLogos from '../public/assets/img-logos.png';
+
 export default function Home() {
+    const { user } = useContext(AuthContext);
+
   return (
     <React.Fragment>
-      <HeaderHome/>
+      <Header/>
       <div class="banner-area banner-2">
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 m-auto text-center col-sm-12 col-md-12">
+                        <div class="col-lg-12 m-auto text-center col-sm-12 col-md-12">
                             <div class="banner-content content-padding">
                               {/* <h5 class="subtitle">A creative agency</h5> */}
                                 <h1 class="banner-title">Encontre os melhores Fornecedores e Profissionais da Indústria Têxtil.</h1>
-                                <p>A Plataforma que reúne profissionais da Moda.</p>
-
-                                <a href="#" class="btn btn-white btn-circled">lets start</a>
+                                <p>Unimos grandes empresa em um só lugar.</p>
+                                
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 m-auto bt-0 text-center col-sm-12 col-md-12">
+                        <Image
+                            src={imgLogos}
+                            alt="Picture of the author"
+                            width={1000} automatically provided
+                            height={85} automatically provided
+                        /> 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
 
     <Oportunities/>
 

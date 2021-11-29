@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button, Badge } from "react-bootstrap";
 import Link from 'next/link';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import BtnFilter from '../components/BtnFilter';
 
-export default function OportunitiesPage() {
+function OportunitiesPage({ data, typesData, categoriesData }) {
+    const [ filter, setFilter ] = useState('');
+    const [ filterCategory, setFilterCategory ] = useState('');
+
+    function handleClickFilter(name) {
+        filter == name ? 
+            setFilter("") 
+        : 
+            setFilter(name)
+    }
+    function handleClickCategory(name) {
+        filterCategory == name ? setFilterCategory("") : setFilterCategory(name)
+    }
+
+    const oportunidadeFilter = data.result.filter(op => op.type.includes(filter) && op.categories.includes(filterCategory));
 
     return (
         <React.Fragment>
@@ -15,28 +30,38 @@ export default function OportunitiesPage() {
                     <div class="row justify-content-center">
                         <div class="col-lg-12 m-auto col-sm-12 col-md-12">
                             <div class="filters">
-                                <span>Tipo</span>
-                                <Link href="/">
-                                    <a>
-                                        <Badge pill className="badge__filter" bg="light" text="dark">
-                                            Emprego
-                                        </Badge>
-                                    </a>
-                                </Link>
-                                <Link href="/">
-                                    <a>
-                                        <Badge pill className="badge__filter" bg="light" text="dark">
-                                            Diária
-                                        </Badge>
-                                    </a>
-                                </Link>
-                                <Link href="/">
-                                    <a>
-                                        <Badge pill className="badge__filter" bg="light" text="dark">
-                                            Emprego
-                                        </Badge>
-                                    </a>
-                                </Link>
+                                {typesData.types.map(function(type) {
+
+                                    let checked = filter == type ? "checked" : "" ;
+
+                                    return (
+                                        <React.Fragment>
+                                            <BtnFilter
+                                                className={`btn__filter ${checked}`}
+                                                key={type}
+                                                name={type}
+                                                click={(name) => handleClickFilter(name = type)}
+                                            />
+                                        </React.Fragment>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-sm-12 col-md-12">
+                            <div class="filters">
+                                { categoriesData.categories.map(function(category) {
+
+                                    let checked = filterCategory == category ? "checked" : "" ;
+
+                                    return (
+                                        <BtnFilter
+                                            className={`btn__filter ${checked}`}
+                                            key={category}
+                                            name={category}
+                                            click={(name) => handleClickCategory(name = category)}
+                                        />
+                                    )
+                                }) }
                             </div>
                         </div>
                     </div>
@@ -45,76 +70,44 @@ export default function OportunitiesPage() {
                 <Container>
                     <Row>
                         <Col>
-                            <p className="mt-3">Encontramos <strong>833</strong> vagas para você</p>
+                            <p className="mt-3">Encontramos <strong>{oportunidadeFilter.length}</strong> {filter ? `${filter.toLocaleLowerCase()}${oportunidadeFilter.length !== 1 ? "s" : ""}` : "vagas"} { filterCategory && `de ${filterCategory.toLocaleLowerCase()}` }  para você</p>
                         </Col>
                     </Row>
 
                 <div class="row">
-                        <div class="col-lg-3 col-sm-6 col-md-4">
-                            <a href="/" class="blog-block">
-                                {/* <img src="images/blog/blog-1.jpg" alt="" class="img-fluid"> */}
-                                <div class="blog-text">
-                                    <h6 class="author-name"><span>Emprego</span></h6>
-                                    <a href="blog-single.html" class="h5 my-2 d-inline-block">
-                                    Costureira Overlock
+                    {oportunidadeFilter.map(function(oportunidade) {
+
+                        let color = '';
+                        switch (oportunidade.type) {
+                            case "Emprego":
+                                color = "emprego"
+                                break;
+                            case "Estágio":
+                                color = "estagio"
+                                break;
+                            case "Diária":
+                                color = "diaria"
+                                break;
+                            default:
+                                break;
+                        }
+
+                        return (
+                                <div key={oportunidade._id} class="col-lg-3 col-sm-6 col-md-4">
+                                    <Link href={`/oportunidade/${oportunidade._id}`}>
+                                    <a class="blog-block">
+                                        {/* <img src="images/blog/blog-1.jpg" alt="" class="img-fluid"> */}
+                                        <div class="blog-text">
+                                            <h6 class={`author-name--${color}`}><span>{oportunidade.type}</span></h6>
+                                            <h4>{oportunidade.title}</h4>
+                                            <p>{oportunidade.created_by}</p>
+                                            <h6 class="author-name">Catete - RJ</h6>
+                                        </div>
                                     </a>
-                                    <p>Becomeing a best sale marketer is not easy but not impossible too.Ne</p>
-                                    <h6 class="author-name">Catete - RJ</h6>
+                                    </Link>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-md-4">
-                        <a href="/" class="blog-block">
-                                {/* <img src="images/blog/blog-1.jpg" alt="" class="img-fluid"> */}
-                                <div class="blog-text">
-                                    <h6 class="author-name"><span>Emprego</span></h6>
-                                    <a href="blog-single.html" class="h5 my-2 d-inline-block">
-                                    Costureira Overlock
-                                    </a>
-                                    <p>Becomeing a best sale marketer is not easy but not impossible too.Ne</p>
-                                    <h6 class="author-name">Catete - RJ</h6>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-md-4">
-                            <a href="/" class="blog-block">
-                                {/* <img src="images/blog/blog-1.jpg" alt="" class="img-fluid"> */}
-                                <div class="blog-text">
-                                    <h6 class="author-name"><span>Emprego</span></h6>
-                                    <a href="blog-single.html" class="h5 my-2 d-inline-block">
-                                    Costureira Overlock
-                                    </a>
-                                    <p>Becomeing a best sale marketer is not easy but not impossible too.Ne</p>
-                                    <h6 class="author-name">Catete - RJ</h6>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-md-4">
-                            <a href="/" class="blog-block">
-                                {/* <img src="images/blog/blog-1.jpg" alt="" class="img-fluid"> */}
-                                <div class="blog-text">
-                                    <h6 class="author-name"><span>Emprego</span></h6>
-                                    <a href="blog-single.html" class="h5 my-2 d-inline-block">
-                                    Costureira Overlock
-                                    </a>
-                                    <p>Becomeing a best sale marketer is not easy but not impossible too.Ne</p>
-                                    <h6 class="author-name">Catete - RJ</h6>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-md-4">
-                            <a href="/" class="blog-block">
-                                {/* <img src="images/blog/blog-1.jpg" alt="" class="img-fluid"> */}
-                                <div class="blog-text">
-                                    <h6 class="author-name"><span>Emprego</span></h6>
-                                    <a href="blog-single.html" class="h5 my-2 d-inline-block">
-                                    Costureira Overlock
-                                    </a>
-                                    <p>Becomeing a best sale marketer is not easy but not impossible too.Ne</p>
-                                    <h6 class="author-name">Catete - RJ</h6>
-                                </div>
-                            </a>
-                        </div>
+                        )
+                    })}
                     </div>
                 </Container>
             
@@ -124,3 +117,19 @@ export default function OportunitiesPage() {
         </React.Fragment>
     )
 }
+
+export async function getServerSideProps() {
+    const response = await fetch(`http://localhost:3333/opportunities`);
+    const types = await fetch(`http://localhost:3333/opportunities/types`);
+    const categories = await fetch(`http://localhost:3333/opportunities/categories`);
+
+    const data = await response.json();
+    const typesData = await types.json();
+    const categoriesData = await categories.json();
+
+    console.log(typesData);
+
+    return { props: { data, typesData, categoriesData } };
+}
+
+export default OportunitiesPage;

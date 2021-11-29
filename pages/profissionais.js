@@ -85,18 +85,17 @@ function ProvidersPage({ data, categoriesData }){
                         // }
 
                         return (
-                            fornecedor.status == 1 && 
-                            (<div key={fornecedor._id} class="col-lg-3 col-sm-6 col-md-4">
-                                 <a href={`/${fornecedor._id}`} class="blog-block">
-                                 <div class="blog-text">
-                                         <h6 class={`author-name provider`}><span>{fornecedor.categories}</span></h6>
-                                         <img className="img__card" src="https://www.zancanelli.com.br/site/images/logo.png" width="65" height="auto" alt="Zancanelli Malhas"/>
-                                         <h4>{fornecedor.company_name}</h4>
-                                         <p className="description__card">{fornecedor.description.slice(0, 80)}...</p>
-                                         <h6 class="author-name">{fornecedor.city} - {fornecedor.state}</h6>
-                                     </div>
-                                 </a>
-                             </div>)
+                                <div key={fornecedor._id} class="col-lg-3 col-sm-6 col-md-4">
+                                    <a href={`/${fornecedor._id}`} class="blog-block">
+                                    <div class="blog-text">
+                                            <h6 class={`author-name provider`}><span>{fornecedor.categories}</span></h6>
+                                            <img className="img__card" src="https://www.zancanelli.com.br/site/images/logo.png" width="65" height="auto" alt="Zancanelli Malhas"/>
+                                            <h4>{fornecedor.company_name}</h4>
+                                            <p className="description__card">{fornecedor.description.slice(0, 80)}...</p>
+                                            <h6 class="author-name">Rio Comprido - RJ</h6>
+                                        </div>
+                                    </a>
+                                </div>
                         )
                     })}
                     </div>
