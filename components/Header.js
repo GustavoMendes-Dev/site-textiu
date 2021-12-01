@@ -115,9 +115,9 @@ export default function Header(){
                             </DropDown>
                             ) : (
                                 <ul class="navbar-nav">
-                                    <li class="nav-item">
+                                    <li class="btn__round">
                                         <Link href="/conta/criar">
-                                            <a class="nav-link smoth-scroll">Cadastre-se</a>
+                                            <a>Junte-se à Textiu.</a>
                                         </Link>
                                     </li>
                                     <li class="nav-item">
