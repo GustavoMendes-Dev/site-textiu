@@ -107,7 +107,7 @@ export default function Header(){
                                     <li class="nav-item">
                                         <Link href="/conta/perfil">
                                             <a class="nav-link smoth-scroll" onClick={e => e.preventDefault()}>
-                                                Olá, {user.name} <DownOutlined />
+                                                Olá, {user?.name} <DownOutlined />
                                             </a>
                                         </Link>
                                     </li>

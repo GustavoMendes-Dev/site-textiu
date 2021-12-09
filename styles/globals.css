@@ -368,7 +368,6 @@ section.content {
 .site-navigation .navbar-nav a,
 .trans-navigation .navbar-nav a {
   font-size: 14px;
-  font-weight: 600;
 }
 
 .site-navigation .navbar-nav a.active,
@@ -1396,6 +1395,14 @@ BLOG PAGE
 .blog-post .post-info i {
   margin-right: 5px;
   font-size: 14px;
+}
+
+.post-author svg, .post-date svg {
+  color: #3330a3 !important;
+}
+
+.post-author {
+  margin-right: 30px;
 }
 
 .blog-post .post-author span, .blog-post .post-info span {

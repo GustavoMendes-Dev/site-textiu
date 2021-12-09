@@ -44,12 +44,12 @@ export default function Oportunidade({oportunidades}) {
                                 <h2 href="#" class="mb-2">{oportunidade[0].title}</h2>
                                 {/* <img src="images/blog/blog-lg.jpg" alt="" class="img-fluid"> */}
                                 <div class="mb-3 d-flex">
-                                    <div class="post-author mr-3">
+                                    <div class="post-author">
                                         <UserLineIcon/>
-                                        <a class="h6 text-uppercase">{oportunidade[0].created_by}</a>
+                                        <a class="h6">{oportunidade[0].provider.company_name}</a>
                                     </div>
 
-                                    <div class="post-info">
+                                    <div class="post-date">
                                         <TimeLineIcon/>
                                         <span>Criado em: {data}</span>
                                     </div>
@@ -121,8 +121,8 @@ export default function Oportunidade({oportunidades}) {
 
                         <div class="col-lg-12">
                             <div class="sidebar-widget about-bar">
-                                <h5 class="mb-3">{oportunidade[0].created_by}</h5>
-                                <p>Nostrum ullam porro iusto. Fugit eveniet sapiente nobis nesciunt velit cum fuga doloremque dignissimos asperiores</p>
+                                <h5 class="mb-3">{oportunidade[0].provider.company_name}</h5>
+                                <p>{oportunidade[0].provider.description}</p>
 
                                 <a className="btn btn-primary">Candidate-se</a>
                             </div>

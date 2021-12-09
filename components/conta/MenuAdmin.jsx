@@ -60,7 +60,7 @@ const MenuAdmin = () => {
     const subMenuGerenciar = (
         <Menu>
             <Menu.Item>
-                <Link rel="noopener noreferrer" href="/conta/oportunidades/tipos">
+                <Link rel="noopener noreferrer" href="/conta/gerenciar/usuarios">
                     Usuários
                 </Link>
             </Menu.Item>

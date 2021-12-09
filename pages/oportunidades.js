@@ -101,7 +101,7 @@ function OportunitiesPage({ data, typesData, categoriesData }) {
                                             <h6 class={`author-name--${color}`}><span>{oportunidade.type}</span></h6>
                                             <h4>{oportunidade.title}</h4>
                                             <p>{oportunidade.created_by}</p>
-                                            <h6 class="author-name">Catete - RJ</h6>
+                                            <h6 class="author-name">{oportunidade.provider.neighborhood} - {oportunidade.provider.state}</h6>
                                         </div>
                                     </a>
                                     </Link>

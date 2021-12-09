@@ -146,7 +146,7 @@ export const TextArea = ({ name, ...rest }) => {
   );
 };
 
-export const SelectCategories = ({ name, defaultValue, children, ...rest }) => {
+export const Select = ({ name, defaultValue, children, ...rest }) => {
   const inputRef = useRef(null);
   const { fieldName, registerField, error, clearError } = useField(name);
 
@@ -179,9 +179,9 @@ export const SelectCategories = ({ name, defaultValue, children, ...rest }) => {
         {...rest}
       >
         {defaultValue ? (
-          <option value={defaultValue}>{defaultValue}</option>
+          <option selected value={defaultValue}>{defaultValue}</option>
         ) : (
-          <option value="0">Escolha uma categoria</option>
+          <option disabled selected value="">Escolha uma categoria</option>
         )}
         {children}
       </FormSelect>

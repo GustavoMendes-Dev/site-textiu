@@ -51,24 +51,24 @@ const Dashboard = () => {
     )
 }
 
-export const getServerSideProps = async (ctx) => {
-    const { [ 'sitetextiu.token' ] : token } = parseCookies(ctx);
-    const auth = ctx.req.headers['Authorization'];
+// export const getServerSideProps = async (ctx) => {
+//     const { [ 'sitetextiu.token' ] : token } = parseCookies(ctx);
+//     // const auth = ctx.req.headers['x-access-token'];
 
-    console.log(auth)
+//     // console.log(auth)
 
-    if (!token && !auth)  {
-        return {
-            redirect: {
-                destination: "/conta/entrar",
-                permanent: false,
-            }
-        }
-    }
+//     if (!token)  {
+//         return {
+//             redirect: {
+//                 destination: "/conta/entrar",
+//                 permanent: false,
+//             }
+//         }
+//     }
 
-    return {
-        props: {}
-    }
-}
+//     return {
+//         props: {}
+//     }
+// }
 
 export default Dashboard;

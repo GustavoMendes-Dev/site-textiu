@@ -29,11 +29,6 @@ const MenuProvider = () => {
                     Lista
                 </Link>
             </Menu.Item>
-            <Menu.Item>
-                <Link rel="noopener noreferrer" href="/conta/profissionais/categorias">
-                    Categorias
-                </Link>
-            </Menu.Item>
         </Menu>
     );
 
@@ -42,16 +37,6 @@ const MenuProvider = () => {
             <Menu.Item>
                 <Link rel="noopener noreferrer" href="/conta/oportunidades">
                     Lista
-                </Link>
-            </Menu.Item>
-            <Menu.Item>
-                <Link rel="noopener noreferrer" href="/conta/oportunidades/tipos">
-                    Tipos
-                </Link>
-            </Menu.Item>
-            <Menu.Item>
-                <Link rel="noopener noreferrer" href="/conta/oportunidades/categorias">
-                    Categorias
                 </Link>
             </Menu.Item>
         </Menu>
@@ -68,22 +53,12 @@ const MenuProvider = () => {
                         </a>
                     </Link>
                 </li>
-        
-                <DropDown submenu={subMenuFornecedores}>
-                    <li class="nav-item dropdown">
-                        {/* <Link href="#"> */}
-                            <a class="nav-link smoth-scroll">
-                                Fornecedores <ArrowDownSLineIcon size={15}/>
-                            </a>
-                        {/* </Link> */}
-                    </li>
-                </DropDown>
 
                 <DropDown submenu={subMenuProfissionais}>
                     <li class="nav-item dropdown">
                         {/* <Link href="#"> */}
                             <a class="nav-link smoth-scroll">
-                            Profissionais <ArrowDownSLineIcon size={15}/>
+                            Candidatos <ArrowDownSLineIcon size={15}/>
                             </a>
                         {/* </Link> */}
                     </li>
@@ -92,7 +67,7 @@ const MenuProvider = () => {
                 <DropDown submenu={subMenuOportunidades}>
                     <li class="nav-item dropdown">
                             <a class="nav-link smoth-scroll">
-                            Vagas <ArrowDownSLineIcon size={15}/>
+                            Minhas Vagas <ArrowDownSLineIcon size={15}/>
                             </a>
                     </li>
                 </DropDown>
@@ -100,7 +75,7 @@ const MenuProvider = () => {
                 <li class="nav-item">
                     <Link href="/conta/anuncios">
                         <a class="nav-link smoth-scroll">
-                            Anúncios
+                            Meus Anúncios
                         </a>
                     </Link>
                 </li>

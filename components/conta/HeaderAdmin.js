@@ -7,9 +7,25 @@ import { AuthContext } from "../../contexts/AuthContext.tsx"
 
 import DropDown from "../DropDown";
 import MenuAdmin from "./MenuAdmin";
+import MenuProvider from "./MenuProvider";
 
 export default function HeaderAdmin(){
-    const { user } = useContext(AuthContext);
+    const { user, Logout } = useContext(AuthContext);
+
+    let menuPermission = user?.permission;
+    switch ( menuPermission ) {
+        case 1:
+            menuPermission = "Menu 1"; 
+            break;
+        case 2:
+            menuPermission = <MenuProvider/>; 
+            break;
+        case 3:
+            menuPermission = <MenuAdmin/>; 
+            break;
+        default:
+            break;
+    }
 
     const menuUser = (
         <Menu>
@@ -24,7 +40,7 @@ export default function HeaderAdmin(){
                 </Link>
             </Menu.Item>
             <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer">
+                <a target="_blank" rel="noopener noreferrer" onClick={Logout}>
                 Sair
                 </a>
             </Menu.Item>
@@ -50,7 +66,7 @@ export default function HeaderAdmin(){
                         </span>
                     </button>
 
-                    <MenuAdmin/>
+                    {menuPermission}
 
                     <div class="collapse navbar-collapse justify-content-end">
                         <DropDown submenu={menuUser}>
