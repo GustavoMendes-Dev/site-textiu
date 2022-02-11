@@ -136,7 +136,7 @@ const AddOpportunity = ({categoriesData, typesData, token}) => {
                                 >
                                     {categoriesData.categories.map(category => {
                                         return (
-                                            <option value={category}>{category}</option>
+                                            <option key={category} value={category}>{category}</option>
                                         )
                                     })}
                                 </Select>
@@ -160,7 +160,7 @@ const AddOpportunity = ({categoriesData, typesData, token}) => {
                                     >
                                         {typesData.types.map(category => {
                                             return (
-                                                <option value={category}>{category}</option>
+                                                <option key={category} value={category}>{category}</option>
                                             )
                                         })}
                                     </Select>

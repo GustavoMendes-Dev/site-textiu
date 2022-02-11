@@ -35,7 +35,7 @@ export const Input = ({ name, ...rest }) => {
         {...rest}
       />
 
-      {error && <span class="text-danger">{error}</span>}
+      {error && <span className="text-danger">{error}</span>}
     </React.Fragment>
   );
 };

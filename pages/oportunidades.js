@@ -25,30 +25,27 @@ function OportunitiesPage({ data, typesData, categoriesData }) {
     return (
         <React.Fragment>
             <Header/>
-            <div class="filter__content">
+            <div className="filter__content">
                 <Container>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-12 m-auto col-sm-12 col-md-12">
-                            <div class="filters">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-12 m-auto col-sm-12 col-md-12">
+                            <div className="filters">
                                 {typesData.types.map(function(type) {
 
                                     let checked = filter == type ? "checked" : "" ;
 
                                     return (
-                                        <React.Fragment>
-                                            <BtnFilter
-                                                className={`btn__filter ${checked}`}
-                                                key={type}
-                                                name={type}
-                                                click={(name) => handleClickFilter(name = type)}
-                                            />
-                                        </React.Fragment>
+                                      <BtnFilter key={type}
+                                          className={`btn__filter ${checked}`}
+                                          name={type}
+                                          click={(name) => handleClickFilter(name = type)}
+                                      />
                                     )
                                 })}
                             </div>
                         </div>
-                        <div class="col-lg-12 col-sm-12 col-md-12">
-                            <div class="filters">
+                        <div className="col-lg-12 col-sm-12 col-md-12">
+                            <div className="filters">
                                 { categoriesData.categories.map(function(category) {
 
                                     let checked = filterCategory == category ? "checked" : "" ;
@@ -74,7 +71,7 @@ function OportunitiesPage({ data, typesData, categoriesData }) {
                         </Col>
                     </Row>
 
-                <div class="row">
+                <div className="row">
                     {oportunidadeFilter.map(function(oportunidade) {
 
                         let color = '';
@@ -93,15 +90,15 @@ function OportunitiesPage({ data, typesData, categoriesData }) {
                         }
 
                         return (
-                                <div key={oportunidade._id} class="col-lg-3 col-sm-6 col-md-4">
+                                <div key={oportunidade._id} className="col-lg-3 col-sm-6 col-md-4">
                                     <Link href={`/oportunidade/${oportunidade._id}`}>
-                                    <a class="blog-block">
-                                        {/* <img src="images/blog/blog-1.jpg" alt="" class="img-fluid"> */}
-                                        <div class="blog-text">
-                                            <h6 class={`author-name--${color}`}><span>{oportunidade.type}</span></h6>
+                                    <a className="blog-block">
+                                        {/* <img src="images/blog/blog-1.jpg" alt="" className="img-fluid"> */}
+                                        <div className="blog-text">
+                                            <h6 className={`author-name--${color}`}><span>{oportunidade.type}</span></h6>
                                             <h4>{oportunidade.title}</h4>
                                             <p>{oportunidade.created_by}</p>
-                                            <h6 class="author-name">{oportunidade.provider.neighborhood} - {oportunidade.provider.state}</h6>
+                                            <h6 className="author-name">{oportunidade.provider.neighborhood} - {oportunidade.provider.state}</h6>
                                         </div>
                                     </a>
                                     </Link>

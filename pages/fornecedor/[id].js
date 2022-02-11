@@ -22,85 +22,85 @@ export default function Provider({providers}) {
     return (
         <React.Fragment>
             <Header/>
-            <div class="filter__content">
+            <div className="filter__content">
                 <Container>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-12 m-auto col-sm-12 col-md-12">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-12 m-auto col-sm-12 col-md-12">
                         Voltar
                         </div>
                     </div>
                 </Container>
             </div>
-            <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                                <div class="row">
-                        <div class="col-lg-12">
-                            <div class="blog-post">
-                                <div class="sidebar-widget tag">
+            <div className="container">
+        <div className="row">
+            <div className="col-lg-8">
+                                <div className="row">
+                        <div className="col-lg-12">
+                            <div className="blog-post">
+                                <div className="sidebar-widget tag">
                                     <a href="#">{provider[0].type}</a>
                                 </div>
                             
-                                <h2 href="#" class="mb-2">{provider[0].company_name}</h2>
-                                {/* <img src="images/blog/blog-lg.jpg" alt="" class="img-fluid"> */}
-                                <div class="mb-3 d-flex">
-                                    <div class="post-author">
+                                <h2 href="#" className="mb-2">{provider[0].company_name}</h2>
+                                {/* <img src="images/blog/blog-lg.jpg" alt="" className="img-fluid"> */}
+                                <div className="mb-3 d-flex">
+                                    <div className="post-author">
                                         <UserLineIcon/>
-                                        {/* <a class="h6">{provider[0].provider.company_name}</a> */}
+                                        {/* <a className="h6">{provider[0].provider.company_name}</a> */}
                                     </div>
 
-                                    <div class="post-date">
+                                    <div className="post-date">
                                         <TimeLineIcon/>
                                         <span>Criado em: {data}</span>
                                     </div>
                                 </div>
 
-                                <div class="mt-1 mb-3">
-                                    <h5 class="d-inline-block mr-3">R$</h5>
-                                    <ul class="list-inline d-inline-block">
-                                        <li class="list-inline-item">{provider[0].salary_range}</li>
+                                <div className="mt-1 mb-3">
+                                    <h5 className="d-inline-block mr-3">R$</h5>
+                                    <ul className="list-inline d-inline-block">
+                                        <li className="list-inline-item">{provider[0].salary_range}</li>
                                     </ul>
                               
-                                    <h5 class="d-inline-block mr-3">Contratação</h5>
-                                    <ul class="list-inline d-inline-block">
-                                        <li class="list-inline-item">{provider[0].hiring}</li>
+                                    <h5 className="d-inline-block mr-3">Contratação</h5>
+                                    <ul className="list-inline d-inline-block">
+                                        <li className="list-inline-item">{provider[0].hiring}</li>
                                     </ul>
                                 
-                                    <h5 class="d-inline-block mr-3">Categoria</h5>
-                                    <ul class="list-inline d-inline-block">
-                                        <li class="list-inline-item">{provider[0].categories}</li>
+                                    <h5 className="d-inline-block mr-3">Categoria</h5>
+                                    <ul className="list-inline d-inline-block">
+                                        <li className="list-inline-item">{provider[0].categories}</li>
                                     </ul>
 
-                                    <h5 class="d-inline-block mr-3">Vagas</h5>
-                                    <ul class="list-inline d-inline-block">
-                                        <li class="list-inline-item">{provider[0].vacancies}</li>
+                                    <h5 className="d-inline-block mr-3">Vagas</h5>
+                                    <ul className="list-inline d-inline-block">
+                                        <li className="list-inline-item">{provider[0].vacancies}</li>
                                     </ul>
                                 </div>
                                 
-                                <h5 class="d-inline-block mr-3">Sobre:</h5>
-                                <p class="mt-3">{provider[0].description}</p>
+                                <h5 className="d-inline-block mr-3">Sobre:</h5>
+                                <p className="mt-3">{provider[0].description}</p>
 
-                                <h5 class="d-inline-block mr-3">Requisitos:</h5>
+                                <h5 className="d-inline-block mr-3">Requisitos:</h5>
                                 <p>{provider[0].requirements}</p>
 
-                                <h5 class="d-inline-block mr-3">Desejável:</h5>
+                                <h5 className="d-inline-block mr-3">Desejável:</h5>
                                 <p>{provider[0].desirable}</p>
 
-                                {/* <div class="mt-5 mb-3">
-                                    <h5 class="d-inline-block mr-3">Tags:</h5>
-                                    <ul class="list-inline d-inline-block">
-                                        <li class="list-inline-item"><a href="#">Agency</a>,</li>
-                                        <li class="list-inline-item"><a href="#">Marketing</a>,</li>
-                                        <li class="list-inline-item"><a href="#">Business</a></li>
+                                {/* <div className="mt-5 mb-3">
+                                    <h5 className="d-inline-block mr-3">Tags:</h5>
+                                    <ul className="list-inline d-inline-block">
+                                        <li className="list-inline-item"><a href="#">Agency</a>,</li>
+                                        <li className="list-inline-item"><a href="#">Marketing</a>,</li>
+                                        <li className="list-inline-item"><a href="#">Business</a></li>
                                     </ul>
                                 </div> */}
-                                {/* <div class="my-4">
-                                    <h5 class="d-inline-block mr-3">Share Now:</h5>
-                                    <ul class="list-inline d-inline-block">
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                {/* <div className="my-4">
+                                    <h5 className="d-inline-block mr-3">Share Now:</h5>
+                                    <ul className="list-inline d-inline-block">
+                                        <li className="list-inline-item"><a href="#"><i className="fab fa-facebook"></i></a></li>
+                                        <li className="list-inline-item"><a href="#"><i className="fab fa-twitter"></i></a></li>
+                                        <li className="list-inline-item"><a href="#"><i className="fab fa-pinterest"></i></a></li>
+                                        <li className="list-inline-item"><a href="#"><i className="fab fa-linkedin"></i></a></li>
                                     </ul>
                                 </div> */}
                             </div>
@@ -108,20 +108,20 @@ export default function Provider({providers}) {
                         </div>
                     </div>
             </div>
-            <div class="col-lg-4">
-                                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="sidebar-widget search">
-                                <div class="form-group">
-                                    {/* <input type="text" placeholder="search" class="form-control"> */}
-                                    <i class="fa fa-search"></i>
+            <div className="col-lg-4">
+                                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="sidebar-widget search">
+                                <div className="form-group">
+                                    {/* <input type="text" placeholder="search" className="form-control"> */}
+                                    <i className="fa fa-search"></i>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-12">
-                            <div class="sidebar-widget about-bar">
-                                {/* <h5 class="mb-3">{provider[0].provider.company_name}</h5>
+                        <div className="col-lg-12">
+                            <div className="sidebar-widget about-bar">
+                                {/* <h5 className="mb-3">{provider[0].provider.company_name}</h5>
                                 <p>{provider[0].provider.description}</p> */}
 
                                 <a className="btn btn-primary">Candidate-se</a>
@@ -130,10 +130,10 @@ export default function Provider({providers}) {
 
                         
 
-                        {/* <div class="col-lg-12">
-                            <div class="sidebar-widget category">
-                                <h5 class="mb-3">Category</h5>
-                                <ul class="list-styled">
+                        {/* <div className="col-lg-12">
+                            <div className="sidebar-widget category">
+                                <h5 className="mb-3">Category</h5>
+                                <ul className="list-styled">
                                     <li>Marketing</li>
                                     <li>Digiatl</li>
                                     <li>SEO</li>
@@ -146,8 +146,8 @@ export default function Provider({providers}) {
                             </div>
                         </div> */}
 
-                        {/* <div class="col-lg-12">
-                            <div class="sidebar-widget tag">
+                        {/* <div className="col-lg-12">
+                            <div className="sidebar-widget tag">
                                 <p href="#">web</p>
                                 <a href="#">development</a>
                                 <a href="#">seo</a>
@@ -159,11 +159,11 @@ export default function Provider({providers}) {
                                 <a href="#">Design trend</a>
                             </div>
                         </div> */}
-                        {/* <div class="col-lg-12">
-                            <div class="sidebar-widget download">
-                                <h5 class="mb-4">Download Files</h5>
-                                <a> <i class="fa fa-file-pdf"></i>Company Manual</a>
-                                <a href="#"> <i class="fa fa-file-pdf"></i>Company Profile</a>
+                        {/* <div className="col-lg-12">
+                            <div className="sidebar-widget download">
+                                <h5 className="mb-4">Download Files</h5>
+                                <a> <i className="fa fa-file-pdf"></i>Company Manual</a>
+                                <a href="#"> <i className="fa fa-file-pdf"></i>Company Profile</a>
                             </div>
                         </div> */}
 

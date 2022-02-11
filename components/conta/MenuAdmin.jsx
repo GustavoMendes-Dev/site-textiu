@@ -69,20 +69,20 @@ const MenuAdmin = () => {
     
 
     return (
-        <div class="collapse navbar-collapse text-center" id="mainNav">
-            <ul class="navbar-nav ">
-                <li class="nav-item">
+        <div className="collapse navbar-collapse text-center" id="mainNav">
+            <ul className="navbar-nav ">
+                <li className="nav-item">
                     <Link href="/conta">
-                        <a class="nav-link smoth-scroll">
+                        <a className="nav-link smoth-scroll">
                             Visão Geral
                         </a>
                     </Link>
                 </li>
         
                 <DropDown submenu={subMenuFornecedores}>
-                    <li class="nav-item dropdown">
+                    <li className="nav-item dropdown">
                         {/* <Link href="#"> */}
-                            <a class="nav-link smoth-scroll">
+                            <a className="nav-link smoth-scroll">
                                 Fornecedores <ArrowDownSLineIcon size={15}/>
                             </a>
                         {/* </Link> */}
@@ -90,9 +90,9 @@ const MenuAdmin = () => {
                 </DropDown>
 
                 <DropDown submenu={subMenuProfissionais}>
-                    <li class="nav-item dropdown">
+                    <li className="nav-item dropdown">
                         {/* <Link href="#"> */}
-                            <a class="nav-link smoth-scroll">
+                            <a className="nav-link smoth-scroll">
                             Profissionais <ArrowDownSLineIcon size={15}/>
                             </a>
                         {/* </Link> */}
@@ -100,24 +100,24 @@ const MenuAdmin = () => {
                 </DropDown>
 
                 <DropDown submenu={subMenuOportunidades}>
-                    <li class="nav-item dropdown">
-                            <a class="nav-link smoth-scroll">
+                    <li className="nav-item dropdown">
+                            <a className="nav-link smoth-scroll">
                             Vagas <ArrowDownSLineIcon size={15}/>
                             </a>
                     </li>
                 </DropDown>
 
                 <DropDown submenu={subMenuGerenciar}>
-                    <li class="nav-item dropdown">
-                            <a class="nav-link smoth-scroll">
+                    <li className="nav-item dropdown">
+                            <a className="nav-link smoth-scroll">
                             Gerenciar <ArrowDownSLineIcon size={15}/>
                             </a>
                     </li>
                 </DropDown>
 
-                <li class="nav-item">
+                <li className="nav-item">
                     <Link href="/conta/anuncios">
-                        <a class="nav-link smoth-scroll">
+                        <a className="nav-link smoth-scroll">
                             Anúncios
                         </a>
                     </Link>

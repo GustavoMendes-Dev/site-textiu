@@ -49,31 +49,31 @@ export default function HeaderAdmin(){
 
     return (
         <React.Fragment>
-            <nav class="navbar navbar-expand-lg fixed-top trans-navigation header-white header-admin">
-                <div class="container">
+            <nav className="navbar navbar-expand-lg fixed-top trans-navigation header-white header-admin">
+                <div className="container">
                     <li>
                         <Link href="/">
-                            <a class="navbar-brand">
-                                {/* <img src="images/logo.png" alt="" class="img-fluid b-logo"> */}
+                            <a className="navbar-brand">
+                                {/* <img src="images/logo.png" alt="" className="img-fluid b-logo"> */}
                                 tex.manager
                             </a>
                         </Link>
                     </li>
                     
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon">
-                            <i class="fa fa-bars"></i>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon">
+                            <i className="fa fa-bars"></i>
                         </span>
                     </button>
 
                     {menuPermission}
 
-                    <div class="collapse navbar-collapse justify-content-end">
+                    <div className="collapse navbar-collapse justify-content-end">
                         <DropDown submenu={menuUser}>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
                                     <Link href="/conta/perfil">
-                                        <a class="nav-link smoth-scroll" onClick={e => e.preventDefault()}>
+                                        <a className="nav-link smoth-scroll" onClick={e => e.preventDefault()}>
                                             Olá, {user?.name} <DownOutlined />
                                         </a>
                                     </Link>

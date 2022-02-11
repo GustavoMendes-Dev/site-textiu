@@ -21,7 +21,7 @@ const FormLogin = () => {
     }
 
     return (
-        <Form ref={formRef} className="mt-4" onSubmit={handleSubmit} className="form__login--form">
+        <Form ref={formRef} onSubmit={handleSubmit} className="form__login--form mt-4">
             <h3>Acesse sua conta</h3>
         <Row>
             <Col lg={12}>

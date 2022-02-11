@@ -5,7 +5,7 @@ import { parseCookies } from 'nookies';
 import { Switch } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 
-import { Input, TextArea, SelectEstado, SelectCategories } from "../../../../components/Inputs";
+import { Input, TextArea, SelectEstado, Select } from "../../../../components/Inputs";
 import { Form } from "@unform/web";
 
 import HeaderAdmin from '../../../../components/conta/HeaderAdmin';
@@ -122,7 +122,7 @@ const EditProviders = ({fornecedores, categories}) => {
                             <Col lg={6}>
                                 <FormGroup className="form-group">
                                     <FormLabel>Categoria</FormLabel>
-                                        <SelectCategories
+                                        <Select
                                             name="categories"
                                             type="text"
                                             placeholder="Categoria"
@@ -131,10 +131,10 @@ const EditProviders = ({fornecedores, categories}) => {
                                         >
                                                 {categories.categories.map(function(category) {
                                                     return (
-                                                        <option value={category}>{category}</option>
+                                                        <option key={category} value={category}>{category}</option>
                                                     )
                                                 })}
-                                        </SelectCategories>
+                                        </Select>
                                 </FormGroup>
                             </Col>
                             <Col lg={6}>

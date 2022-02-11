@@ -42,7 +42,7 @@ const Categories = ({categories}) => {
                             <h3>Categorias</h3>
                         </Col>
                         <Col lg={4}>
-                            <Link href="/conta/fornecedores/criar">
+                            <Link href="/conta/fornecedores/criar" passHref>
                                 <p className="btn btn-primary" >Adicionar Categoria</p>
                             </Link>
                         </Col>

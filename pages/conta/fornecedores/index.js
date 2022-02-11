@@ -77,7 +77,7 @@ const ListProviders = ({fornecedores}) => {
                             <h3>Fornecedores</h3>
                         </Col>
                         <Col lg={3}>
-                            <Link href="/conta/fornecedores/criar">
+                            <Link href="/conta/fornecedores/criar" passHref>
                                 <p className="btn btn-primary" >Novo Fornecedor</p>
                             </Link>
                         </Col>

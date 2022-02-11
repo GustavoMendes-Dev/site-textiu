@@ -86,7 +86,7 @@ const ListOpportunities = ({opportunities}) => {
                             <h2>Vagas</h2>
                         </Col>
                         <Col lg={3}>
-                            <Link href="/conta/oportunidades/criar">
+                            <Link href="/conta/oportunidades/criar" passHref>
                                 <p className="btn btn-primary" >Nova Vaga</p>
                             </Link>
                         </Col>

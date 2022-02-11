@@ -26,7 +26,6 @@ type Token = {
     token: string;
 }
 
-
 export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthProvider({ children }) {
@@ -37,7 +36,6 @@ export function AuthProvider({ children }) {
     
     useEffect(() => {
         const { 'sitetextiu.token': token } = parseCookies();
-
         async function Auth(token: Token) {
             try{
                 if (token) {
